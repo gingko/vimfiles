@@ -22,7 +22,7 @@ set hlsearch    "hilight searches by default
 
 set number      "add line numbers
 set showbreak=...
-set wrap linebreak nolist
+set nowrap linebreak nolist
 
 "mapping for command key to map navigation thru display lines instead
 "of just numbered lines
@@ -38,10 +38,10 @@ nmap <D-6> g^
 nmap <D-0> g^
 
 "add some line space for easy reading
-set linespace=4
+""set linespace=2
 
 "disable visual bell
-set visualbell t_vb=
+""set visualbell t_vb=
 
 "try to make possible to navigate within lines of wrapped lines
 nmap <Down> gj
@@ -65,6 +65,7 @@ set laststatus=2
 
 "turn off needless toolbar on gvim/mvim
 set guioptions-=T
+set guioptions-=m
 
 "recalculate the trailing whitespace warning when idle, and after saving
 autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
@@ -224,13 +225,13 @@ if has("gui_running")
 
     colorscheme railscasts
     set guitablabel=%M%t
-    set lines=40
-    set columns=115
+    "set lines=40
+    ""set columns=115
 
     if has("gui_gnome")
         set term=gnome-256color
-        colorscheme railscasts
-        set guifont=Monospace\ Bold\ 12
+        colorscheme my_slate 
+        set guifont=Monaco\ 8 
     endif
 
     if has("gui_mac") || has("gui_macvim")
