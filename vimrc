@@ -406,3 +406,6 @@ let g:user_zen_settings = {
   \  },
  \}
 
+if has("autocmd")
+  autocmd BufEnter *.ctp set syn=php
+endif
