@@ -233,8 +233,9 @@ if has("gui_running")
 
     if has("gui_gnome")
         set term=gnome-256color
-        colorscheme my_slate 
-        set guifont=Monaco\ 8 
+        colorscheme my_slate
+        ""set guifont=Monaco\ 8
+        set guifont=Liberation\ Mono\ 7
     endif
 
     if has("gui_mac") || has("gui_macvim")
