@@ -2,6 +2,7 @@
 let g:CSApprox_verbose_level = 0
 
 "necessary on some Linux distros for pathogen to properly load bundles
+filetype on
 filetype off
 
 "load pathogen managed plugins
@@ -55,7 +56,7 @@ set fo=l
 set statusline=%f       "tail of the filename
 
 "Git
-set statusline+=[%{GitBranch()}]
+set statusline+=%{fugitive#statusline()}
 
 "RVM
 set statusline+=%{exists('g:loaded_rvm')?rvm#statusline():''}
@@ -245,10 +246,6 @@ if has("gui_running")
         "macmenu &File.New\ Tab key=<nop>
         "map <D-t> :CommandT<CR>
         " make Mac's Option key behave as the Meta key
-        try
-          set transparency=5
-        catch
-        endtry
     endif
 
     if has("gui_win32") || has("gui_win32s")
